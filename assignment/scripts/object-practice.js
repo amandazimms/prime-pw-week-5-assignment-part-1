@@ -56,3 +56,40 @@ me.favoriteColor = 'green';
 console.log('the new me, now with favorite color!:', me);
 
 
+//6 - edabit challenge using Objects I decided to try: 
+//https://edabit.com/challenge/5qYYauQwYwxz3nd9R
+//Online Shopping
+
+//Create a function that determines whether a shopping order is eligible for free shipping.
+//An order is eligible for free shipping if the total cost of items purchased exceeds $50.00.
+
+//examples
+//freeShipping({ "Shampoo": 5.99, "Rubber Ducks": 15.99 }) ➞ false
+//freeShipping({ "Flatscreen TV": 399.99 }) ➞ true
+//freeShipping({ "Monopoly": 11.99, "Secret Hitler": 35.99, "Bananagrams": 13.99 }) ➞ true
+
+let annabelsOrder = {
+  "Moby Dick": 9.99,
+  "Catch 22": 14.99
+}
+
+let josiesOrder = {
+  "Advanced Algebra": 99.99,
+  "Linear Algebra": 49.99,
+  "Calc 3": 199.99
+}
+
+function isFreeShippingElligible( order ) {
+  let total = 0; //set a variable total and initialize at 0
+  for (const bookPrice in order) { //loop through all the properties on each order
+    total += order[bookPrice]; //add each price (the value of the property?) to the total
+  }
+
+  if (total > 50) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log('result for isFreeShippingElligible(josiesOrder):', isFreeShippingElligible(josiesOrder));
+console.log('result for isFreeShippingElligible(annabelsOrder):', isFreeShippingElligible(annabelsOrder));
